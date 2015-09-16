@@ -23,3 +23,7 @@
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
 """Invenio module to interact with Grobid API for metadata extraction."""
+
+from version import __version__
+
+__all__ = ['__version__']

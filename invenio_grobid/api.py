@@ -33,16 +33,13 @@ from invenio.base.globals import cfg
 from .errors import GrobidRequestError
 
 
-def process_pdf(pdf_file, stream=False):
-    """Process a single PDF file with Grobid, returning TEI XML results."""
-    if stream:
-        file_object = pdf_file
-    else:
-        file_object = open(pdf_file, 'rb')
+def process_pdf_stream(pdf_file):
+    """Process a PDF file stream with Grobid, returning TEI XML results."""
     response = requests.post(
         url=os.path.join(cfg.get("GROBID_HOST"), "processFulltextDocument"),
-        files={'input': file_object}
+        files={'input': pdf_file}
     )
+
     if response.status_code == 200:
         return response.text
     else:
