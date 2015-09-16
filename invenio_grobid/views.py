@@ -24,11 +24,12 @@
 
 """Define base Grobid Blueprint."""
 
-from flask import Blueprint, render_template, request, Response
+from flask import Blueprint, redirect, render_template, request, Response
 
 from flask_login import login_required
 
-from .api import process_pdf
+from .api import process_pdf_stream
+from .errors import GrobidRequestError
 
 blueprint = Blueprint('grobid', __name__, url_prefix="/grobid",
                       template_folder='templates',
@@ -47,5 +48,9 @@ def index():
 @login_required
 def process_file():
     file_uploaded = request.files['file']
-    results = process_pdf(file_uploaded.stream, stream=True)
-    return Response(results, content_type="text/xml")
+    try:
+        results = process_pdf_stream(file_uploaded.stream)
+        return Response(results, content_type="text/xml")
+    except GrobidRequestError:
+        # TODO(jacquerie): flash explanation back to the user.
+        return redirect('/grobid')

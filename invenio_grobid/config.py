@@ -24,4 +24,4 @@
 
 """Configuration of Grobid."""
 
-GROBID_HOST = None
+GROBID_HOST = 'http://localhost:8080'
