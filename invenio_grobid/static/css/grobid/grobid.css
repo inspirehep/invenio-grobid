@@ -1,0 +1,134 @@
+/*
+ * This file is part of Invenio.
+ * Copyright (C) 2015 CERN.
+ *
+ * Invenio is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Invenio is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Invenio. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * In applying this licence, CERN does not waive the privileges and immunities
+ * granted to it by virtue of its status as an Intergovernmental Organization
+ * or submit itself to any jurisdiction.
+ */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.container-action {
+    background-color: #EEEEEE;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-results {
+    background-color: #EEEEEE;
+    font-size: 16px;
+    padding: 20px;
+}
+
+.container-results ol,
+.container-results ul {
+    padding-left: 20px;
+}
+
+.container-results li {
+    margin-bottom: 5px;
+}
+
+.container-results li:last-of-type {
+    margin-bottom: 0;
+}
+
+.container-results .dl-horizontal {
+    margin-bottom: 0;
+}
+
+.container-results .dl-horizontal dd {
+    text-align: justify;
+}
+
+.container-results .dl-horizontal dt+dd {
+    margin-bottom: 10px;
+}
+
+.grobid-logo {
+    -webkit-text-stroke: 1px #1f2c39;
+    color: #2c3e50;
+    text-shadow:
+      -1px -1px 0 #1f2c39,
+       1px -1px 0 #1f2c39,
+      -1px  1px 0 #1f2c39,
+       1px  1px 0 #1f2c39;
+    font-size: 46px;
+    line-height: 46px;
+    margin: 0;
+}
+
+.grobid-logo a {
+    color: inherit;
+}
+
+.grobid-logo a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.grobid-logo span {
+    -webkit-text-stroke: 1px #d7711a;
+    color: #e57e25;
+    text-shadow:
+      -1px -1px 0 #d7711a,
+       1px -1px 0 #d7711a,
+      -1px  1px 0 #d7711a,
+       1px  1px 0 #d7711a;
+}
+
+.grobid-primary {
+    color: #2c3e50;
+}
+
+.grobid-warning {
+    color: #d7711a;
+}
+
+.grobid-large {
+    font-size: 32px;
+}
+
+.grobid-huge {
+    font-size: 20em;
+}
+
+.grobid-center {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}

@@ -19,14 +19,54 @@
 
 {% extends "grobid/base.html" %}
 
+{% block header %}
+  {{ super() }}
+  {% bundles "grobid.css", "grobid.js" %}
+{% endblock %}
+
 {% block body %}
+  <div class="container container-action">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="pull-left grobid-logo"><a href="{{url_for('grobid.index')}}">GROB<span>ID</span></a></h1>
+        <form action="{{url_for('grobid.process_file')}}" method="post" enctype="multipart/form-data" class="form-inline pull-right grobid-form">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" class="form-control input-lg grobid-text" readonly/>
+              <span class="input-group-btn">
+                <span class="btn btn-primary btn-lg btn-file grobid-file">
+                  Choose File <input type="file" name="file"/>
+                </span>
+              </span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-lg btn-warning"/>Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-    <h1>Upload new File</h1>
-    <form action="{{url_for('grobid.process_file')}}"
-          method="post"
-          enctype="multipart/form-data">
-      <p><input type="file" name="file">
-         <input type="submit" value="Upload"></p>
-    </form>
-
+  <div class="container container-results">
+    <dl class="dl-horizontal">
+      <dt>Title</dt>
+      <dd>The LCA Problem Revisited</dd>
+      <dt>Authors</dt>
+      <dd>
+        <ul>
+          <li>Michael A. Bender (SUNY Stony Brook)</li>
+          <li>Martín Farach-Colton (Rutgers University)</li>
+        </ul>
+      </dd>
+      <dt>Abstract</dt>
+      <dd>We present a very simple algorithm for the Least Common Ancestor problem. We thus dispel the frequently held notion that an optimal LCA computation is unwieldy and unimplementable. Interestingly, this algorithm is a sequentialization of a previously known PRAM algorithm of Berkman, Breslauer, Galil, Schieber, and Vishkin.</dd>
+      <dt>References</dt>
+      <dd>
+        <ol>
+          <li>O. Berkman, D. Breslauer, Z. Galil, B. Schieber, and U. Vishkin. Highly parallelizable problems. In <em>Proc. of the 21st Ann. ACM Symp on Theory of Computing</em>, pages 309-319, 1989.</li>
+          <li>D. Harel and R. E. Tarjan. Fast algorithms for finding nearest common ancestors. <em>SIAM J. Comput.,</em>, 13(2):338-355, 1984.</li>
+          <li>B. Schieber and U. Vishkin. On finding lowest common ancestors: Simplification and parallelization. <em>SIAM J. Comput.</em>, 17:1253-1262, 1988.</li>
+        </ol>
+      </dd>
+    </dl>
+  </div>
 {% endblock %}
