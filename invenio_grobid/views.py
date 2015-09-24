@@ -28,7 +28,7 @@ from flask import Blueprint, redirect, render_template, request, Response
 
 from flask_login import login_required
 
-from .api import process_pdf_stream
+from .api import process_pdf_stream, submit_record
 from .errors import GrobidRequestError
 
 blueprint = Blueprint('grobid', __name__, url_prefix="/grobid",
@@ -47,6 +47,7 @@ def index():
 @blueprint.route('/upload', methods=["POST"])
 @login_required
 def process_file():
+    """Send given file to Grobid for processing and return results."""
     file_uploaded = request.files['file']
     try:
         results = process_pdf_stream(file_uploaded.stream)
@@ -54,3 +55,15 @@ def process_file():
     except GrobidRequestError:
         # TODO(jacquerie): flash explanation back to the user.
         return redirect('/grobid')
+
+
+@blueprint.route('/submit', methods=["POST"])
+@login_required
+def submit():
+    """Placeholder."""
+    # FIXME: Hook into interface when ready
+    results = {
+        "title": "Test title",
+        "authors": ["J. Lavik"],
+    }
+    submit_record(results)

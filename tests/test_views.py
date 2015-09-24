@@ -20,10 +20,8 @@
 import os
 
 import httpretty
-import mock
-import pytest
 
-from invenio_grobid.errors import GrobidRequestError
+import pytest
 
 from invenio.base.globals import cfg
 from invenio.testsuite import InvenioTestCase

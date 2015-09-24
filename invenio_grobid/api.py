@@ -28,7 +28,11 @@ import os
 
 import requests
 
-from invenio.base.globals import cfg
+import six
+
+from werkzeug.utils import import_string
+
+from flask import current_app
 
 from .errors import GrobidRequestError
 
@@ -36,7 +40,8 @@ from .errors import GrobidRequestError
 def process_pdf_stream(pdf_file):
     """Process a PDF file stream with Grobid, returning TEI XML results."""
     response = requests.post(
-        url=os.path.join(cfg.get("GROBID_HOST"), "processFulltextDocument"),
+        url=os.path.join(current_app.config.get("GROBID_HOST"),
+                         "processFulltextDocument"),
         files={'input': pdf_file}
     )
 
@@ -44,3 +49,11 @@ def process_pdf_stream(pdf_file):
         return response.text
     else:
         raise GrobidRequestError(response.reason)
+
+
+def submit_record(results):
+    """Submits the record in the way determined by `GROBID_RESULT_HANDLER`."""
+    handler = current_app.config.get("GROBID_RESULT_HANDLER")
+    if isinstance(handler, six.string_types):
+        handler = import_string(handler)
+    return handler(results)
