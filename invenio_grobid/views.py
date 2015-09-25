@@ -24,12 +24,13 @@
 
 """Define base Grobid Blueprint."""
 
-from flask import Blueprint, redirect, render_template, request, Response
+from flask import Blueprint, abort, jsonify, redirect, render_template, request
 
 from flask_login import login_required
 
 from .api import process_pdf_stream, submit_record
 from .errors import GrobidRequestError
+from .utils import tei_to_dict
 
 blueprint = Blueprint('grobid', __name__, url_prefix="/grobid",
                       template_folder='templates',
@@ -48,13 +49,14 @@ def index():
 @login_required
 def process_file():
     """Send given file to Grobid for processing and return results."""
-    file_uploaded = request.files['file']
+    uploaded_file = request.files['file']
+
     try:
-        results = process_pdf_stream(file_uploaded.stream)
-        return Response(results, content_type="text/xml")
+        xml = process_pdf_stream(uploaded_file.stream)
     except GrobidRequestError:
-        # TODO(jacquerie): flash explanation back to the user.
-        return redirect('/grobid')
+        abort(500)
+
+    return jsonify(**tei_to_dict(xml))
 
 
 @blueprint.route('/submit', methods=["POST"])

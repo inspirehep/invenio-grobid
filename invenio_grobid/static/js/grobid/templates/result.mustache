@@ -16,4 +16,35 @@
   along with Invenio; if not, write to the Free Software Foundation, Inc.,
   59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 }}
-<pre>{{xml}}</pre>
+<dl class="dl-horizontal">
+  <dt>Title</dt>
+  <dd>{{title}}</dd>
+  <dt>Authors</dt>
+  <dd>
+    <ul>
+    {{#authors}}
+      <li>
+        {{name}}
+        {{#affiliations}}
+          ({{value}})
+        {{/affiliations}}
+      </li>
+    {{/authors}}
+    </ul>
+  </dd>
+  <dt>Abstract</dt>
+  <dd>{{abstract}}</dd>
+  <dt>References</dt>
+  <dd>
+    <ol>
+      {{#references}}
+        <li>
+          {{#authors}}
+            {{name}},
+          {{/authors}}
+          {{ref_title}}
+        </li>
+      {{/references}}
+    </ol>
+  </dd>
+</dl>

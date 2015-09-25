@@ -60,15 +60,11 @@ define([
             type: 'POST',
             url: options['url'],
             data: formData,
-            contentType: false,
             processData: false,
-            dataType: 'xml'
+            contentType: false
           }).success(function (data) {
-            // See: http://stackoverflow.com/a/1675058/374865
-            var xml = data.xml ? data.xml : (new XMLSerializer()).serializeToString(data);
-
-            $('.container-results').html(resultTemplate({xml: xml}));
-          }).fail(function (data) {
+            $('.container-results').html(resultTemplate(data));
+          }).error(function (data) {
             $('.container-results').html(errorTemplate({
               error_title: options['error_title'],
               error_explanation: options['error_explanation'],

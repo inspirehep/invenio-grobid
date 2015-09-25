@@ -21,8 +21,20 @@
 
 {% block header %}
   {{ super() }}
-  {% bundles "grobid.css", "grobid.js" %}
+  {% bundles "grobid.css" %}
 {% endblock %}
+
+{% block javascript %}
+  {{ super() }}
+
+  <script type="text/javascript">
+    require(["js/grobid/grobid"],
+      function(GROBID) {
+
+      var grobid = GROBID.GROBID({});
+    });
+  </script>
+{%- endblock javascript %}
 
 {% block body %}
   <div class="container container-action">
