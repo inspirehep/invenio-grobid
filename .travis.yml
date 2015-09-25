@@ -53,7 +53,7 @@ before_install:
   - "cp .travis.invenio.cfg ${VIRTUAL_ENV}/var/invenio.base-instance/invenio.cfg"
 
 install:
-  - "travis_retry pip install Invenio"
+  - "travis_retry pip install -e git+https://github.com/inveniosoftware/invenio@master#egg=Invenio"
   - "travis_retry pip install -r .travis-$REQUIREMENTS-requirements.txt --allow-all-external"
   - "travis_retry pip install -e .[$REXTRAS]"
 
