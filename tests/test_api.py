@@ -26,7 +26,7 @@ import pytest
 from invenio_grobid.api import process_pdf_stream
 from invenio_grobid.errors import GrobidRequestError
 
-from invenio.base.globals import cfg
+from flask import current_app
 from invenio.testsuite import InvenioTestCase
 
 
@@ -43,7 +43,8 @@ class TestAPI(InvenioTestCase):
     @httpretty.activate
     def test_ok_response(self):
         """A valid pdf results in a valid response from GROBID."""
-        url = os.path.join(cfg.get('GROBID_HOST'), 'processFulltextDocument')
+        url = os.path.join(current_app.config.get('GROBID_HOST'),
+                           'processFulltextDocument')
         httpretty.register_uri(httpretty.POST, url, body='OK')
 
         self.assertEqual(process_pdf_stream(self.pdf), 'OK')
@@ -51,7 +52,8 @@ class TestAPI(InvenioTestCase):
     @httpretty.activate
     def test_ko_response(self):
         """A 500 response from GROBID yields a GrobidRequestError."""
-        url = os.path.join(cfg.get('GROBID_HOST'), 'processFulltextDocument')
+        url = os.path.join(current_app.config.get('GROBID_HOST'),
+                           'processFulltextDocument')
         httpretty.register_uri(httpretty.POST, url, status=500)
 
         with pytest.raises(GrobidRequestError):

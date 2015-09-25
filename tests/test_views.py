@@ -20,12 +20,10 @@
 import os
 
 import httpretty
-import mock
+
 import pytest
 
-from invenio_grobid.errors import GrobidRequestError
-
-from invenio.base.globals import cfg
+from flask import current_app
 from invenio.testsuite import InvenioTestCase
 
 
@@ -49,7 +47,8 @@ class TestViews(InvenioTestCase):
     @httpretty.activate
     def test_post_valid_pdf(self):
         """Obtain GROBID's response when POSTing valid data."""
-        url = os.path.join(cfg.get('GROBID_HOST'), 'processFulltextDocument')
+        url = os.path.join(current_app.config.get('GROBID_HOST'),
+                           'processFulltextDocument')
         httpretty.register_uri(httpretty.POST, url, body='<TEI></TEI>')
 
         self.login('admin', 'admin')
@@ -64,7 +63,8 @@ class TestViews(InvenioTestCase):
     @httpretty.activate
     def test_post_invalid_pdf(self):
         """Redirect to /grobid when POSTing invalid data."""
-        url = os.path.join(cfg.get('GROBID_HOST'), 'processFulltextDocument')
+        url = os.path.join(current_app.config.get('GROBID_HOST'),
+                           'processFulltextDocument')
         httpretty.register_uri(httpretty.POST, url, status=500)
 
         self.login('admin', 'admin')

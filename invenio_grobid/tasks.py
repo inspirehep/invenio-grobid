@@ -22,10 +22,13 @@
 # waive the privileges and immunities granted to it by virtue of its status
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-"""Configuration of Grobid."""
+"""Custom exception types."""
 
-GROBID_HOST = 'http://localhost:8080'
-"""URL to host:port running Grobid service."""
+from invenio.celery import celery
+from invenio_records.api import create_record
 
-GROBID_RESULT_HANDLER = "invenio_grobid.utils:submit_handler"
-"""Import path or function dealing with the Grobid submission."""
+
+@celery.task
+def upload(results):
+    """Upload record using `invenio_records.api.create_record`."""
+    return create_record(results)
