@@ -1,0 +1,3 @@
+[run]
+omit =
+    invenio_grobid/bundles.py

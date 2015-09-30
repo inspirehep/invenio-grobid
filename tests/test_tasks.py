@@ -17,6 +17,8 @@
 # along with Invenio; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 
+import pytest
+
 from mock import patch
 
 from invenio.celery import celery
@@ -26,6 +28,7 @@ from invenio_grobid.api import submit_record
 from invenio.testsuite import InvenioTestCase
 
 
+@pytest.skip('FIXME(jacquerie): see PR #7.')
 class TestTasks(InvenioTestCase):
 
     """Test invenio_grobid's Tasks."""

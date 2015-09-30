@@ -23,8 +23,6 @@
 require([
   'js/grobid/grobid',
 ], function (GROBID) {
-  'use strict';
-
-  var grobid = GROBID.GROBID({});
+  console.log('init GROBID');
 });
 

@@ -26,4 +26,5 @@ Authors
 
 Invenio module to interact with Grobid API for metadata extraction.
 
-- CERN <feedback@inspirehep.net>
+- Jacopo Notarstefano <jacopo.notarstefano@cern.ch>
+- Jan Aage Lavik <jan.age.lavik@cern.ch>
