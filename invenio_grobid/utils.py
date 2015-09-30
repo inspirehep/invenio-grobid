@@ -51,6 +51,10 @@ def tei_to_dict(tei):
     if authors:
         result['authors'] = map(element_to_author, authors)
 
+    keywords = get_keywords(root)
+    if keywords and len(keywords) == 1:
+        result['keywords'] = extract_keywords(keywords[0])
+
     title = get_title(root)
     if title and len(title) == 1:
         result['title'] = title[0].text
@@ -96,6 +100,10 @@ def element_to_author(el):
     return result
 
 
+def extract_keywords(el):
+    return [{'value': e.text} for e in el.xpath('.//tei:term', namespaces=NS)]
+
+
 def element_to_reference(el):
     result = {}
 
@@ -119,6 +127,11 @@ def get_abstract(root):
 
 def get_authors(root):
     return root.xpath('//tei:fileDesc//tei:author', namespaces=NS)
+
+
+def get_keywords(root):
+    return root.xpath('//tei:profileDesc/tei:textClass/tei:keywords',
+                      namespaces=NS)
 
 
 def get_references(root):
