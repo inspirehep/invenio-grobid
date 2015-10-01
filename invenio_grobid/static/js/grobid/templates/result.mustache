@@ -52,7 +52,14 @@
           {{#authors}}
             {{name}},
           {{/authors}}
-          {{ref_title}}
+          {{ref_title}},
+          {{#journal_pubnote}}
+            <i>{{journal_title}}</i>,
+            {{#journal_volume}}{{journal_volume}}{{/journal_volume}}
+            {{#journal_issue}}({{journal_issue}}){{/journal_issue}}
+            {{#page_range}}:{{page_range}}{{/page_range}},
+            {{year}}
+          {{/journal_pubnote}}
         </li>
       {{/references}}
     </ol>

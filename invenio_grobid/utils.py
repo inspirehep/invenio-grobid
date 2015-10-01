@@ -107,16 +107,71 @@ def extract_keywords(el):
 def element_to_reference(el):
     result = {}
 
-    title = el.xpath('.//tei:analytic/tei:title[@level="a" and @type="main"]',
-                     namespaces=NS)
-    if title and len(title) == 1:
-        result['ref_title'] = title[0].text
+    result['ref_title'] = extract_reference_title(el)
 
     result['authors'] = [
         element_to_author(e) for e in el.xpath('.//tei:author', namespaces=NS)
     ]
 
-    # FIXME(jacquerie): missing pubnote.
+    result['journal_pubnote'] = extract_reference_pubnote(el)
+
+    return result
+
+
+def extract_reference_title(el):
+    title = el.xpath(
+        './/tei:analytic/tei:title[@level="a" and @type="main"]',
+        namespaces=NS
+    )
+    if title and len(title) == 1:
+        return title[0].text
+
+
+def extract_reference_pubnote(el):
+    result = {}
+
+    journal_title = el.xpath('./tei:monogr/tei:title', namespaces=NS)
+    if journal_title and len(journal_title) == 1:
+        result['journal_title'] = journal_title[0].text
+
+    journal_volume = el.xpath(
+        './tei:monogr/tei:imprint/tei:biblScope[@unit="volume"]',
+        namespaces=NS
+    )
+    if journal_volume and len(journal_volume) == 1:
+        result['journal_volume'] = journal_volume[0].text
+
+    journal_issue = el.xpath(
+        './tei:monogr/tei:imprint/tei:biblScope[@unit="issue"]',
+        namespaces=NS
+    )
+    if journal_issue and len(journal_issue) == 1:
+        result['journal_issue'] = journal_issue[0].text
+
+    year = el.xpath(
+        './tei:monogr/tei:imprint/tei:date[@type="published"]/@when',
+        namespaces=NS
+    )
+    if year and len(year) == 1:
+        result['year'] = year[0]
+
+    pages = []
+
+    page_from = el.xpath(
+        './tei:monogr/tei:imprint/tei:biblScope[@unit="page"]/@from',
+        namespaces=NS
+    )
+    if page_from and len(page_from) == 1:
+        pages.append(page_from[0])
+
+    page_to = el.xpath(
+        './tei:monogr/tei:imprint/tei:biblScope[@unit="page"]/@to',
+        namespaces=NS
+    )
+    if page_to and len(page_to) == 1:
+        pages.append(page_to[0])
+
+    result['page_range'] = '-'.join(pages)
 
     return result
 
