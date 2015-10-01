@@ -17,18 +17,24 @@
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 
 """GROBID bundles."""
+try:
+    from invenio.base.bundles import invenio as _i, jquery as _j
+except ImportError:
+    from invenio_base.bundles import invenio as _i, jquery as _j
 
-from invenio.ext.assets import Bundle, CleanCSSFilter
+from invenio.ext.assets import Bundle, CleanCSSFilter, RequireJSFilter
 
 
 css = Bundle(
     'css/grobid/grobid.css',
+    filters=CleanCSSFilter(),
     output='grobid.css',
     weight=30
 )
 
 js = Bundle(
-    'js/init.js',
+    'js/grobid/init.js',
+    filters=RequireJSFilter(exclude=[_j, _i]),
     output='grobid.js',
-    weight=30
+    weight=50
 )

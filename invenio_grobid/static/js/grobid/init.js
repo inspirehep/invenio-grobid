@@ -20,9 +20,10 @@
  * or submit itself to any jurisdiction.
  */
 
-require([
-  'js/grobid/grobid',
-], function (GROBID) {
-  console.log('init GROBID');
+ require(
+   [
+     'jquery',
+     'js/grobid/grobid',
+   ], function (GROBID) {
+      console.log('init GROBID');
 });
-
