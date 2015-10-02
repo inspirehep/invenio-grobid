@@ -46,13 +46,13 @@
             <div class="input-group">
               <input type="text" class="form-control input-lg grobid-text" readonly/>
               <span class="input-group-btn">
-                <span class="btn btn-primary btn-lg btn-file grobid-file">
+                <span class="btn btn-warning btn-lg btn-file grobid-file">
                   Choose File <input type="file" name="file"/>
                 </span>
               </span>
             </div>
           </div>
-          <button type="submit" class="btn btn-lg btn-warning"/>Submit</button>
+          <button type="submit" class="btn btn-lg btn-primary">Upload</button>
         </form>
       </div>
     </div>
@@ -71,6 +71,15 @@
       </dd>
       <dt>Abstract</dt>
       <dd>We present a very simple algorithm for the Least Common Ancestor problem. We thus dispel the frequently held notion that an optimal LCA computation is unwieldy and unimplementable. Interestingly, this algorithm is a sequentialization of a previously known PRAM algorithm of Berkman, Breslauer, Galil, Schieber, and Vishkin.</dd>
+      <dt>Keywords</dt>
+      <dd>
+        <ul>
+          <li>Data Structures</li>
+          <li>Least Common Ancestor (LCA)</li>
+          <li>Range Minimum Query (RMQ)</li>
+          <li>Cartesian Tree</li>
+        </ul>
+      </dd>
       <dt>References</dt>
       <dd>
         <ol>
@@ -80,5 +89,13 @@
         </ol>
       </dd>
     </dl>
+  </div>
+
+  <div class="container container-action">
+    <div class="row">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary btn-lg pull-right grobid-submit">Submit</button>
+      </div>
+    </div>
   </div>
 {% endblock %}
