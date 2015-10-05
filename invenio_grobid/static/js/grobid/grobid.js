@@ -24,20 +24,24 @@ define([
   'jquery',
   'hgn!js/grobid/templates/error',
   'hgn!js/grobid/templates/result',
+  'hgn!js/grobid/templates/success',
   'hgn!js/grobid/templates/waiting',
-], function ($, errorTemplate, resultTemplate, waitingTemplate) {
+], function ($, errorTemplate, resultTemplate, successTemplate, waitingTemplate) {
   return {
     'GROBID': function (opts) {
-      var options = {};
+      var payload,
+          options = {};
 
       this.initGROBID = function (opts) {
         options['error_title'] = opts['error_title'] ||
           'GROBID has encountered an error.';
         options['error_explanation'] = opts['error_explanation'] ||
           'Please try again with the same PDF<br/>or inform the Invenio Developers.';
-        options['url'] = opts['url'] || '/grobid/upload';
+        options['uploadURL'] = opts['uploadURL'] || '/grobid/upload';
+        options['submitURL'] = opts['submitURL'] || '/grobid/submit';
 
         this.handleFile();
+        this.handleUpload();
         this.handleSubmit();
       };
 
@@ -50,7 +54,7 @@ define([
         });
       };
 
-      this.handleSubmit = function () {
+      this.handleUpload = function () {
         $('.grobid-form').on('submit', function (e) {
           e.preventDefault();
 
@@ -58,12 +62,38 @@ define([
 
           $.ajax({
             type: 'POST',
-            url: options['url'],
+            url: options['uploadURL'],
             data: formData,
             processData: false,
             contentType: false
           }).success(function (data) {
+            payload = data;
+
             $('.container-results').html(resultTemplate(data));
+          }).error(function (data) {
+            $('.container-results').html(errorTemplate({
+              error_title: options['error_title'],
+              error_explanation: options['error_explanation'],
+            }));
+          });
+
+          $('.container-results').html(waitingTemplate);
+        });
+      };
+
+      this.handleSubmit = function () {
+        $('.grobid-submit').on('click', function (e) {
+          e.preventDefault();
+
+          $.ajax({
+            type: 'POST',
+            url: options['submitURL'],
+            data: JSON.stringify(payload),
+            contentType: 'application/json'
+          }).success(function (data) {
+            payload = {};
+
+            $('.container-results').html(successTemplate);
           }).error(function (data) {
             $('.container-results').html(errorTemplate({
               error_title: options['error_title'],

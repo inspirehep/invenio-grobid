@@ -28,7 +28,6 @@ from invenio_grobid.api import submit_record
 from invenio.testsuite import InvenioTestCase
 
 
-@pytest.skip('FIXME(jacquerie): see PR #7.')
 class TestTasks(InvenioTestCase):
 
     """Test invenio_grobid's Tasks."""

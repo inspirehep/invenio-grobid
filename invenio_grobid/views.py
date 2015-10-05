@@ -62,10 +62,9 @@ def process_file():
 @blueprint.route('/submit', methods=["POST"])
 @login_required
 def submit():
-    """Placeholder."""
-    # FIXME: Hook into interface when ready
-    results = {
-        "title": "Test title",
-        "authors": ["J. Lavik"],
-    }
-    submit_record(results)
+    """Send metadata extracted by Grobid for further processing."""
+    submitted_json = request.get_json()
+
+    submit_record(submitted_json)
+
+    return jsonify({'status': 'success'})

@@ -24,11 +24,12 @@
 
 """Custom exception types."""
 
+import invenio_records.api
+
 from invenio.celery import celery
-from invenio_records.api import create_record
 
 
 @celery.task
 def upload(results):
     """Upload record using `invenio_records.api.create_record`."""
-    return create_record(results)
+    return invenio_records.api.create_record(results)
