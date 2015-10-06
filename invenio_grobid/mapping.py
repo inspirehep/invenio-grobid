@@ -22,9 +22,7 @@
 # waive the privileges and immunities granted to it by virtue of its status
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-"""Utilities for Invenio Grobid."""
-
-from .tasks import upload
+"""Mapping from Grobid's TEI to the internal dict representation."""
 
 from lxml import etree
 
@@ -32,14 +30,9 @@ from lxml import etree
 NS = {'tei': 'http://www.tei-c.org/ns/1.0'}
 
 
-def submit_handler(results):
-    """Submit results asynchronously using `invenio_grobid.tasks.upload`."""
-    return upload.delay(results)
-
-
 def tei_to_dict(tei):
     parser = etree.XMLParser(encoding='UTF-8', recover=True)
-    root = etree.fromstring(tei.encode('utf-8'), parser)
+    root = etree.fromstring(tei, parser)
 
     result = {}
 

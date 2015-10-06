@@ -22,10 +22,11 @@
 # waive the privileges and immunities granted to it by virtue of its status
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-"""Configuration of Grobid."""
+"""Extras for Invenio Grobid."""
 
-GROBID_HOST = 'http://localhost:8080'
-"""URL to host:port running Grobid service."""
+from .tasks import upload
 
-GROBID_RESULT_HANDLER = "invenio_grobid.extras:submit_handler"
-"""Import path or function dealing with the Grobid submission."""
+
+def submit_handler(results):
+    """Submit results asynchronously using `invenio_grobid.tasks.upload`."""
+    return upload.delay(results)

@@ -30,7 +30,7 @@ from flask_login import login_required
 
 from .api import process_pdf_stream, submit_record
 from .errors import GrobidRequestError
-from .utils import tei_to_dict
+from .mapping import tei_to_dict
 
 blueprint = Blueprint('grobid', __name__, url_prefix="/grobid",
                       template_folder='templates',
