@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:///home/jnotarst/Code/grobid/grobid-home/schemas/rng/Grobid.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI
+    xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader xml:lang="en">
+        <fileDesc>
+            <titleStmt>
+                <title level="a" type="main">The Need to Fairly Confront Spin-1 for the New Higgs-like Particle</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher/>
+                <availability status="unknown">
+                    <licence/>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <author>
+                            <persName>
+                                <forename type="first">John</forename>
+                                <forename type="middle">P</forename>
+                                <surname>Ralston</surname>
+                            </persName>
+                            <affiliation>
+                                <orgName type="department">Department of Physics &amp; Astronomy</orgName>
+                                <orgName type="institution">University of Kansas</orgName>
+                                <address>
+                                    <postCode>66045</postCode>
+                                    <settlement>Lawrence</settlement>
+                                    <region>KS</region>
+                                </address>
+                            </affiliation>
+                        </author>
+                        <title level="a" type="main">The Need to Fairly Confront Spin-1 for the New Higgs-like Particle</title>
+                    </analytic>
+                    <monogr>
+                        <imprint>
+                            <date/>
+                        </imprint>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <abstract>
+                <p>Spin-1 was ruled out early in LHC reports of a new particle with mass near 125 GeV. Actually the spin-1 possibility was dismissed on false premises, and remains open. Model-independent classification based on Lorentz invariance permits nearly two dozen independent amplitudes for spin-1 to two vector particles, of which two remain with on-shell photons. The Landau-Yang theorems are inadequate to eliminate spin-1. Theoretical prejudice to close the gaps is unreliable, and a fair consideration based on experiment is needed. A spin-1 field can produce the resonance structure observed in invariant mass distributions, and also produce the same angular distribution of photons and ZZ decays as spin-0. However spin-0 cannot produce the variety of distributions made by spin-1. The Higgs-like pattern of decay also cannot rule out spin-1 without more analysis. Upcoming data will add information, which should be analyzed giving spin-1 full and unbiased consideration that has not appeared before.</p>
+            </abstract>
+        </profileDesc>
+    </teiHeader>
+    <text xml:lang="en">
+        <body>
+            <p>Recently the ATLAS
+                <ref type="bibr" target="#b0">[1]</ref> and CMS
+                <ref type="bibr" target="#b1">[2]</ref> experiments reported a new particle with a mass near 125 GeV. Soon after the Fermilab CDF and D0 experiments also reported signals.
+                <ref type="bibr" target="#b2">[3]</ref> The mass value and coupling to several channels make it a prime candidate for the Standard Model Higgs particle. The new particle&apos;s spin has not been directly measured. A fair consideration of the spin-1 possibility is needed. The experimental claims ruling out spin-1 are indirect, and based on faulty premises. Analysis is not kinematic, and any firm conclusion that spin- 1 can be eliminated either requires new data, new analysis, or the application of theoretical prejudice.
+            </p>
+            <p>Much rests on observing a bump near 125 GeV in the two photon invariant mass distribution. Consider s-channel annihilation proceeding through a vector Z (Q) → γ(k 1 ) + γ(k 2 ). Let ρ Z be the initial state polarization, and µ 1 , ν 2 the final state photon polarizations . The final state must be symmetric under interchanging all labels of the two bosons. A general 3-vector vertex V ρµν (Q, ) must have the symmetry</p>
+            <figure>
+                <trash>V ρµν (Q, ) = V ρνµ (Q, −); Q = k 1 + k 2 ; = k 1 − k 2 .</trash>
+            </figure>
+            <p>Assuming Lorentz invariance, and up to terms from gauge-fixing, the most general possibility is</p>
+            <figure>
+                <trash>V ρνµ = 1 µ 2 ∑ j V ρ +j T µν +j + V ρ − (Q µ ν + Q ν µ ) + Q 2 ε ρµνσ V −σ + Q 2 (V µ + g ρν + V ν + g ρµ ) + Q 2 (V µ − g ρν − V ν − g ρµ ) + V ρ + ε µνλσ Q λ σ + (V µ + ε ρνλσ Q λ σ − V ν + ε ρµλσ Q λ σ ) + (V µ − ε ρνλσ Q λ σ + V ν − ε ρµλσ Q λ σ ); (1) T µν + = (Q 2 g µν , Q µ Q ν , µ ν , Q µ ν − Q ν µ ); V ρ j± = c j± Q ρ + c j∓ ρ . (2) Here c j± (k 1 , k 2 ) = ±c j± (k 2 , k 1 ) are functions of k 2 1 , k 2 2 , Q 2</trash>
+            </figure>
+            <p>, and µ is a mass scale to make them dimensionless . The notation implies c ± in V ± symbols without index j are independent. Symmetry requires c j− ∼ (k 2 1 − k 2 2 ) times an even function.</p>
+            <p>Go to the center of mass frame Q µ =</p>
+            <figure>
+                <trash>(Q, 0) and k 1 = − k 2 = /2. On-shell photons imply Q · = 0, and Q · 1 = Q · 2 = · 1 = · 2 = 0. Producing the γγ signal leaves V ρνµ = c 0+ Q 2 µ 2 Q ρ g µν + c 3+ Q ρ ε µνλσ Q λ σ + c 5+ Q 2 µ 2 ε ρµνσ σ . (3)</trash>
+            </figure>
+            <p>Although c 3+ can be eliminated with on-shell kinematics it is included for later discussion. Since the interactions are not zero, the spin-1 possibility exists. More assumptions are needed to limit the possibilities . There are few prohibitions against composite fields. Standard Model particles would need strong new interactions to bind to spin-1 at 125 GeV: hydrogenic binding of a top-quark pair needs a coupling constant˜α ∼ 4.5. That would wreak havoc with known top physics without offering hope for decay patterns close to the Standard Model Higgs. &quot; Technicolor &quot; -inspired models
+                <ref type="bibr" target="#b3">[4]</ref> assume composite fields couple like the Standard Model Higgs. New experimental limits on techni- spin-1 masses exist
+                <ref type="bibr" target="#b3">[4]</ref>; it is not clear whether they apply. It is usually assumed that a massive spin-1 theory requires gauge invariance, for which a Zγγ vertex points to a new U(1) symmetry. Let Z µν = ∂ µ Z ν − ∂ ν Z µ , and F µν be the corresponding field strength made from the photon field A µ .
+            </p>
+            <figure>
+                <trash>Under the SU L (2) × SU R (2) decomposition of the Lorentz group these tensors transform like spin (1,0)+(0,1). The dual˜Z µν = ε µναβ Z αβ transforms like (1,0)-(0,1). To make a scalar from three field strengths we need a (0,0) from ((1, 0) + (0, 1)) a ⊗ ((1, 0) + (0, 1)) b ⊗ ((1, 0) + (0, 1)) c .</trash>
+            </figure>
+            <p>Our particle labels are now abc. Use 1 a ⊗ 1 b = 2 ab + 1 ab + 0 ab . Making an invariant with 1 c needs a spin-1 from a ⊗ b, but the 1 ab is antisymmetric in ab. The details are interesting. For arXiv:1211.2288v1
+                <ref type="bibr">[hep-ph] 10 Nov 2012</ref> example, with 12 symmetrization we find:
+            </p>
+            <p>
+                <formula>Z µν F µρ˜F ν ρ = Q · Z 2 ε ρναβ Q ν α ρ 1 β 2 − Q 2 2 ε ρναβ ν Z α ρ 1 β 2 . (4)</formula>
+            </p>
+            <p>When ν Z ∼ Q ν the two terms cancel. When ν Z is orthogonal to Q ν both terms give zero; hence the expression is zero due to gauge invariance. This suggests a &quot; theorem &quot; that the Z sector cannot be gauge invariant
+                <ref type="bibr" target="#b4">[5]</ref> and go to γγ. As a loophole, recall that the difference of two U(1) gauge fields is gauge invariant:
+            </p>
+            <p>
+                <formula>Z µ − = Z µ 1 − Z µ 2 → Z µ 1 − ∂ µ θ − Z µ 2 + ∂ µ θ = Z µ − .</formula>
+            </p>
+            <p>Actually any linear combination of two fields is invariant under a corresponding subgroup of local U 1 (1) ⊗ U 2 (1). That allows a gauge invariant mass term to exist . But the attractive features of perturbative unitarity and renormalizability of gauge theories stem from being able to use a propagator orthogonal to Q ρ , which would decouple from the vertex making real γγ.</p>
+            <p>Regardless of theoretical models we don&apos;t see a reason for experiments to assume gauge invariance for new physics. Two experimentally allowed interaction</p>
+            <figure>
+                <trash>Lagrangians are L = a 1 ∂ · Z F · F + a 2 ∂ · Z F · ˜ F. (5) These come from the symmetric spin-0 products. The spin-2 modes from Z are found in ξ µν = ∂ µ Z ν + ∂ ν Z µ . Using them produces two possibilities L = b 1 ξ µν F µρ F ν ρ + b 2 ξ µν F µρ˜F ν ρ . (6)</trash>
+            </figure>
+            <p>Algebra with on-shell kinematics shows all the above reduce to combinations of terms listed in Eq. 3. A constraint ∂ · Z = 0 can be introduced to define Eq. 3 to be zero. But any interaction can be defined to be zero. The constraint is related to theoretical desires for relativistic &quot; spin-1 &quot; to have literally three degrees of freedom. A related dodge introduces a scalar field φ and writes Z µ = Z µ ⊥ + ∂ µ φ where ∂ · Z ⊥ ≡ 0. Using that too literally would wrongly assert a scalar and not a vector field interacts in Eq. 3. Actually it proves that If and When Z µ ∼ Q µ it is hard to tell the effects of Eq. 3 from interaction with a scalar. When the photons are not onshell , and in the important decay to ZZ the interactions of Eq. 3 (as well as the remaining terms of Eq. 2) cannot be replaced by a scalar field, leading to signals we discuss below. General principles restrict very little, while more detail comes from models. The Proca theory coupled to sources, which is closely related to Stueckelberg models
+                <ref type="bibr" target="#b5">[6]</ref>, has a more subtle treatment of ∂ · Z . The equation of motion is ∂ µ Z µν + m 2 Z Z ν = j µ . In the free-field approximation that j µ → 0 the equation implies ∂ · Z → 0. Hence asymptotic states have three modes. Analysis also shows the momentum conjugate to Z 0 does not exist, meaning it is not dynamical, but dependent. Yet under interactions the constraint can be revised, which is tracked by the corresponding propagator G λρ :
+            </p>
+            <figure>
+                <trash>G λρ = −i g λρ − Q λ Q ρ /m 2 Z Q 2 − m 2 Z + im Z Γ Z .</trash>
+                <figDesc>This is not orthogonal to Q ρ , hence couples to our vertex to produce an interaction. Thus spin-1 is allowed for the LHC observations, but producing Z appears to need a non-conserved current in the amplitude considered. Non-conserved currents exist in Nature and the decay π 0 → γγ occurs because a certain axial current amplitude cannot consistently be conserved when related vector currents are conserved. That history tied to chiral anomalies suggests an axial spin- 1 field. Recent activity
+                    <ref type="bibr" target="#b7">[7]</ref>
+                </figDesc>
+            </figure>
+            <p>invokes massive axial spin-1 particles to explain the top-quark charge asymmetry observed at Fermilab
+                <ref type="bibr" target="#b8">[8]</ref>. It is widely believed the spin-1 possibility was ruled out early. Actually CDF and D0
+                <ref type="bibr" target="#b2">[3]</ref> do not mention the word &quot; spin. &quot; ATLAS
+                <ref type="bibr" target="#b0">[1]</ref> writes that &quot; The observation in the diphoton channel disfavours the spin-1 hypothe- sis
+                <ref type="bibr">[140] [141]</ref>. &quot; CMS
+                <ref type="bibr" target="#b1">[2]</ref> writes in four places that the twophoton decay implies the new particle&apos;s &quot; spin is different from one
+                <ref type="bibr">[129] [130]</ref>. &quot; The references cited are the Landau-Yang theorems
+                <ref type="bibr" target="#b9">[9]</ref>
+                <ref type="bibr" target="#b10">[10]</ref>. Reviewing the derivation shows why the theorems are inadequate. Yang&apos;s method
+                <ref type="bibr" target="#b10">[10]</ref>
+            </p>
+            <figure>
+                <figDesc>lists the joint polarization states of two final state photons in their center of mass frame. With R, L representing right and left-handed helicities there are four possible combinations written Ψ RR , Ψ RR ,Ψ RL , Ψ LR , Ψ LL . The state Ψ RL transforms like e 2iφ when the coordinate system is rotated by angle φ around the z axis, hence has spin angular momentum S z = 2.</figDesc>
+            </figure>
+            <p>Yang says this is forbidden to come from spin-1. Bose symmetry is used to complete a table of selection rules. Nothing of gauge invariance, Lorentz invariance, or momentum dependence is mentioned. CMS
+                <ref type="bibr" target="#b1">[2]</ref> also cites Choi, Miller and Zerwas
+                <ref type="bibr" target="#b11">[11]</ref> on identifying the Higgs spin and parity. The paper&apos;s Eq. 7 claims a general amplitude for spin-J to produce back-to-back Z at angles Θ, Φ takes the form T λ 1 λ 2 d J m, λ 1 −λ 2 (Θ)e i(m−λ 1 +λ 2 )Φ , where the the reduced vertex T λ 1 λ 2 &quot; depends only on the helicities (λ j ) of the two real Z bosons &quot; . This applies Yang&apos;s method to arbitrary spin. Yang&apos;s argument is also repeated almost verbatim in the 2008 paper of Keung, Low and Shu
+                <ref type="bibr" target="#b11">[11]</ref>, which reiterate the rotational and parity transformation properties of polarization products for massive final states.
+            </p>
+            <p>The general method of enumerating amplitudes by polarizations alone produce a few paradoxes. For example , it implies that spin-1 cannot decay to two spin- 0 and conserve angular momentum, so ρ 770 (k 3 ) → π(k 1 )π(k 2 ) should be impossible. The flaw is revealed in the vector current vertex k ρ 1 − k ρ 2 which accounts for the orbital angular momentum neglected in the method of counting helicities. Landau&apos;s paper
+                <ref type="bibr" target="#b9">[9]</ref> classifying the transformation properties of two-photon wave functions avoids the mistake. For example Landau includes the spin ( &quot; spin &quot; )-2 from polarization before dealing with the orbital ( &quot; orbitallnym &quot; ) angular momentum needed to make total J = L + S. Our Eq. 5 is one of Landau&apos;s processes classified under total angular momentum J = 0, parity =±1. Landau&apos;s discussion does not extend to Lorentz invariance or virtual particles, and applying it to decays will cause an error unless all modes are considered. Giving spin-1 fair treatment needs experiments to consider the signals. In producing γγ most of the amplitude will come from the region dictated by the width, Q 2 − m
+            </p>
+            <div>
+                <head>2</head>
+                <figure>
+                    <figDesc>Z ∼ m Z Γ Z .</figDesc>
+                </figure>
+                <p>In this region the phase of the propagator varies rapidly. The phase will be important in interference. This matters because Standard Model amplitudes to continuum γγ states are large compared to most new-physics amplitudes. In generating the cross section, the interference of a relatively large amplitude with a small new-physics amplitude may be much larger than the new amplitude squared. Thus seeking interference can be an effective way to find new physics. The cross section dσ/dQ 2 to measure γγ with invariant mass-squared Q 2 is the sum of the squares of many amplitudes. The calculation summing over final γγ polarizations can be written</p>
+                <figure>
+                    <trash>dσ dQ 2 ∼ ∑ Xµν (M µν X + M Xρ V ρµν ) × (M µν * X + M Xρ V ρ µν ).</trash>
+                </figure>
+                <p>Here ∑ X M Xρ M * Xρ is the density matrix to produce Z from the initial state, summed over final states X, and including phase space factors and the Z propagators. This would be calculated using the parton model and Z production channels. Attaching the propagator to one vertex gives</p>
+                <figure>
+                    <trash>G λρ V ρµν = ic 5+ Q 2 − m 2 Z m 2 Z (Q 2 − m 2 Z + im Z Γ Z ) Q λ Q ρ Q 4 ρµνσ σ . (7)</trash>
+                    <figDesc>We use the identity only for the V ρ ∼ Q ρ term we need. Recall from Eqs. 5, 6 the amplitudes may scale like Q 2 /µ 2 , or higher powers of Q. Taking into account the dimensions and scales shown, a schematic calculation takes the form</figDesc>
+                    <trash>dσ dQ 2 ∼ ∑ j | ˆ Me iφ Q 2 + i ˜ c j Q 2 − m 2 Z m 2 Z (Q 2 − m 2 Z + im Z Γ Z ) | 2 + dσ inco dQ 2 . (8)</trash>
+                </figure>
+                <p>Herê M is a proxy for interfering amplitudes scaled to be dimensionless, and absorbing the overall scale, ˜ c j stand for the production and decay factors lumped together. Symbol dσ inco /dQ 2 represents channels added incoherently , and expected to dominate the background.</p>
+                <figure>
+                    <trash>100 110 120 130 140 150 160 -4 -2 0 2 4 6 8 10 m (GeV) γγ Σ weights -bkgd
+                        <ref type="figure">FIG. 1</ref>
+                    </trash>
+                </figure>
+                <p>: Proof of principle that residuals of the invariant mass distribution dσ/dQ versus Q are consistent with a spin-1 resonance . The thick curve (blue online) is the best fit with m Z = 125.2 GeV, Γ Z = 4.1 GeV, phase φ = 1.33, and other parameters cited in the text. The background curves are bestfits for the full range 0 ≤ φ &lt; 2π in steps of π/12. They illustrate the variety of dip-bump structure, which may have been seen in both ATLAS and CMS data. Residuals from ATLAS weighted sample.</p>
+                <p>The γγ invariant mass distribution comes from convolution over initial state parton distributions, the model of the interaction, and integration over the undetected final states and acceptance of the detectors. Full consideration of spin-1 would seem to need that level of detail. Fortunately ATLAS has presented the residuals of the data for dσ/dQ relative to backgrounds. Figure 1 shows a simple illustration that a vector particle can fit the residuals well. UsingˆM = 1, the best fit values are m Z = 125.2 GeV, Γ Z = 4.1 GeV, φ = 1.33, and˜c = 5 × 10 −5 m 2 Z /GeV 2 ; only one˜c j was used. The calculation was adjusted by an overall normalization κ = 6.42, and a constant of 0.16 was subtracted. The value of χ 2 /NF = 13.2/24 is low, mostly due to many points over the reported range 100 &lt; Q &lt; 160 GeV that are naturally close to zero. Since the experimental groups will not release even the un-binned data used to make histograms we are forced to digitize the published figures.
+                    <ref type="figure">Figure 1</ref> also shows the effects of different phases φ.
+                </p>
+                <p>The background curves (thin lines) come from fixing˜c to the value above and φ = nπ/12 for integer n = 0 − 11. The other parameters were then evaluated at their bestfit values. Most phases produce a dip-bump structure. We observe that fine structures of two independent experiments do suggest a dip-bump structure has been seen. There are several (at least 5 total) points forming a dip at lower mass than the bump in the same region of both the ATLAS and CMS data. We suggest the pole region should receive careful scrutiny in future analysis.</p>
+                <p>The fitted values are tentative but perhaps provide an order of magnitude for the spin-1 possibility. The value of˜c ∼ 0.8 (relative tô M=1) indicate two comparable interfering suffice to make a bump. Justifying why the coherently interfering parts should be the right size seems arbitrary. Note the fit includes effects of experimental resolution, as the physical width is unknown. Smaller widths make sharper dip-bumps. Due to a lack of symmetry they are not always erased by smearing. Relative phases are generally momentum dependent. Different probes can shift the apparent pole-mass position significantly . Using two amplitudes for γγ, and all possible for ZZ production allows great complexity of signals. The apparent width and dip-bump structure might also be due to more than one resonance (whether or not spin-1).</p>
+                <p>Giving different hypotheses fair treatment will also consider their discriminating signals. As a rule angular distributions are needed to determine spin. The angular distribution of the γγ channel will be backgrounddominated , so that ZZ → 4 lepton channels with low backgrounds tends to be more sensitive. By Lorentz and gauge invariance the only possible amplitude for J P = 0 ± → γγ or ZZ go like 1 · 2 and ε abcd a 1 b 2 k c 1 k d 2 , for P = ±, respectively. The same angular observables are produced by c 0+ and c 3+ terms: thus signals &quot; confirming &quot; spin-0 do not rule out spin-1. Yet there are spin-1 distributions that can rule out spin-0. Production of a vector particle in unpolarized hadron-hadron collisions generally leads to a weighted mixture of longitudinal and transverse modes. With the c 5− term the transition from a transverse Z to two vector gauge particles needs one to be longitudinal and one transverse, which is impossible with a spin-0 Higgs. That provides an example using Z polarizations that cannot be mistaken for a scalar field. Finally one may examine the assumption of Lorentz invariance. Fundamental Lorentz symmetry violation is of great interest. More generally the collisions have a preferred rest frame &quot; medium &quot; that break Lorentz symmetry . Photons have a longitudinal mode in a medium with free charges: this can occur with or without a transition to a new phase of matter. Conversion of a longitudinal mode to an observed transverse mode needs very little interaction. Real photons are not always pristine, pointlike probes. For one thing the photon mixes significantly with the ρ meson, which is a great complication.</p>
+                <p>The LHC and Fermilab experiments have discovered a new resonance whose spin is unknown. If the the spin- 1 possibility can be ruled out it should not come from methods relying on incomplete enumeration of amplitudes or theoretical prejudice. Instead more experimental data, which is expected very soon, should guide the way. Exploring the possibilities of the unexpected without bias should be welcome, and possibly the best road to finding &quot; new physics &quot; . Acknowledgments: Alice Bean, KC Kong, Danny Marfatia, Mat McCaskey, Doug McKay and Graham Wilson generously contributed information and helpful comments. Work supported in part under DOE-HEP grant number DE-FG02-04ER14308.</p>
+            </div>
+        </body>
+        <back>
+            <div type="references">
+                <listBibl>
+                    <biblStruct xml:id="b0">
+                        <analytic>
+                            <title/>
+                            <author>
+                                <persName>
+                                    <forename type="first">G</forename>
+                                    <surname>Aad</surname>
+                                </persName>
+                            </author>
+                        </analytic>
+                        <monogr>
+                            <title level="j">ATLAS Collaboration] Phys. Lett. B</title>
+                            <imprint>
+                                <biblScope unit="volume">716</biblScope>
+                                <biblScope unit="issue">1</biblScope>
+                                <date type="published" when="2012" />
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                    <biblStruct xml:id="b1">
+                        <analytic>
+                            <title/>
+                            <author>
+                                <persName>
+                                    <forename type="first">S</forename>
+                                    <surname>Chatrchyan</surname>
+                                </persName>
+                            </author>
+                        </analytic>
+                        <monogr>
+                            <title level="j">CMS Collaboration] Phys. Lett. B</title>
+                            <imprint>
+                                <biblScope unit="volume">716</biblScope>
+                                <biblScope unit="issue">30</biblScope>
+                                <date type="published" when="2012" />
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                    <biblStruct xml:id="b2">
+                        <analytic>
+                            <title/>
+                            <author>
+                                <persName>
+                                    <forename type="first">T</forename>
+                                    <surname>Aaltonen</surname>
+                                </persName>
+                            </author>
+                        </analytic>
+                        <monogr>
+                            <title level="j">CDF and D0 Collaborations Phys. Rev. Lett</title>
+                            <imprint>
+                                <biblScope unit="volume">109</biblScope>
+                                <biblScope unit="page">071804</biblScope>
+                                <date type="published" when="2012" />
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                    <biblStruct xml:id="b3">
+                        <analytic>
+                            <title level="a" type="main">For recent limits see S</title>
+                            <author>
+                                <persName>
+                                    <forename type="first">S</forename>
+                                    <surname>Weinberg</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">L</forename>
+                                    <surname>Susskind Chatrchyan</surname>
+                                </persName>
+                            </author>
+                        </analytic>
+                        <monogr>
+                            <title level="j">Phys. Rev. D Phys. Rev. DCMS Collaboration] Phys. Rev. Lett</title>
+                            <imprint>
+                                <biblScope unit="volume">19</biblScope>
+                                <biblScope unit="issue">109</biblScope>
+                                <biblScope unit="page" from="1277" to="141801" />
+                                <date type="published" when="1979" />
+                            </imprint>
+                        </monogr>
+                        <note>hep. -ex]]</note>
+                    </biblStruct>
+                    <biblStruct xml:id="b4">
+                        <monogr>
+                            <title level="m" type="main">General tests of symmetries will depend on a particular theory and its Ward identities</title>
+                            <imprint/>
+                        </monogr>
+                    </biblStruct>
+                    <biblStruct xml:id="b5">
+                        <analytic>
+                            <title/>
+                            <author>
+                                <persName>
+                                    <forename type="first">E</forename>
+                                    <forename type="middle">C G</forename>
+                                    <surname>Stueckelberg</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="middle">V I</forename>
+                                    <surname>Helv</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">I</forename>
+                                    <forename type="middle">V</forename>
+                                    <surname>Ogievetskii</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">T</forename>
+                                    <surname>Polubarinov</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">T</forename>
+                                    <surname>Kunimasa</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="middle">A A</forename>
+                                    <surname>Goto</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <surname>Slavnov</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <surname>Phys</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <surname>Lett</surname>
+                                </persName>
+                            </author>
+                        </analytic>
+                        <monogr>
+                            <title level="j">Phys. Acta. Prog. Theor. Phys. Veltman, Nucl.Phys. Phys. Rev. Lett</title>
+                            <imprint>
+                                <publisher>Thompson J. Kubo, Phys. Rev</publisher>
+                                <biblScope unit="volume">11</biblScope>
+                                <biblScope unit="issue">21</biblScope>
+                                <biblScope unit="page" from="452" to="2610" />
+                                <date type="published" when="1938" />
+                                <publisher>Thompson J. Kubo, Phys. Rev</publisher>
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                    <biblStruct xml:id="b6">
+                        <analytic>
+                            <title/>
+                            <author>
+                                <persName>
+                                    <forename type="first">S</forename>
+                                    <forename type="middle">V</forename>
+                                    <surname>Lett</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">D</forename>
+                                    <forename type="middle">G C</forename>
+                                    <surname>Kuzmin</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <surname>Mckeon</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <surname>Mod</surname>
+                                </persName>
+                            </author>
+                        </analytic>
+                        <monogr>
+                            <title level="j">Phys. Lett.A Phys. Lett. Burnel, Phys Rev</title>
+                            <editor>B. Kors and P. Nath</editor>
+                            <imprint>
+                                <biblScope unit="volume">58</biblScope>
+                                <biblScope unit="issue">33</biblScope>
+                                <biblScope unit="page" from="2981" to="2985" />
+                                <date type="published" when="1986" />
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                    <biblStruct xml:id="b7">
+                        <analytic>
+                            <title level="a" type="main">[arXiv:0709.1652 [hep-ph</title>
+                            <author>
+                                <persName>
+                                    <forename type="first">J</forename>
+                                    <forename type="middle">C</forename>
+                                    <surname>Pati</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">A</forename>
+                                    <surname>Salam</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">Phys</forename>
+                                    <surname>Lett</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">P</forename>
+                                    <forename type="middle">H</forename>
+                                    <surname>Frampton</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">S</forename>
+                                    <forename type="middle">L</forename>
+                                    <surname>Glashow</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">M</forename>
+                                    <forename type="middle">O</forename>
+                                    <surname>Wanninger</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">J</forename>
+                                    <forename type="middle">H</forename>
+                                    <surname>Antunano</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">G</forename>
+                                    <surname>Kuhn</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="middle">H</forename>
+                                    <surname>Rodrigop</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">J</forename>
+                                    <surname>Frampton</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">K</forename>
+                                    <surname>Shu</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <surname>Wang</surname>
+                                </persName>
+                            </author>
+                        </analytic>
+                        <monogr>
+                            <title level="m">Marques Tavares and M. Schmaltz Gabrielli and M. Raidal</title>
+                            <editor>E. Gabrielli, M. Raidal and A. Racioppi</editor>
+                            <imprint>
+                                <date type="published" when="1975" />
+                                <biblScope unit="page" from="014003" to="054008" />
+                            </imprint>
+                        </monogr>
+                        <note>Martynov. and A. D. Smirnov, Mod. hep. -ph]]</note>
+                    </biblStruct>
+                    <biblStruct xml:id="b8">
+                        <analytic>
+                            <title/>
+                            <author>
+                                <persName>
+                                    <forename type="first">T</forename>
+                                    <surname>Aaltonen</surname>
+                                </persName>
+                            </author>
+                        </analytic>
+                        <monogr>
+                            <title level="j">Phys. Rev. DD0 Collaboration] Phys. Rev. D</title>
+                            <imprint>
+                                <biblScope unit="volume">83</biblScope>
+                                <biblScope unit="issue">84</biblScope>
+                                <biblScope unit="page" from="112003" to="112005" />
+                                <date type="published" when="2011" />
+                            </imprint>
+                        </monogr>
+                        <note>hep. -ex]]</note>
+                    </biblStruct>
+                    <biblStruct xml:id="b9">
+                        <analytic>
+                            <title/>
+                            <author>
+                                <persName>
+                                    <forename type="first">L</forename>
+                                    <forename type="middle">D</forename>
+                                    <surname>Landau</surname>
+                                </persName>
+                            </author>
+                        </analytic>
+                        <monogr>
+                            <title level="j">Dokl. Akad. Nauk Ser.Fiz</title>
+                            <imprint>
+                                <biblScope unit="volume">60</biblScope>
+                                <biblScope unit="page">207</biblScope>
+                                <date type="published" when="1948" />
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                    <biblStruct xml:id="b10">
+                        <analytic>
+                            <title/>
+                            <author>
+                                <persName>
+                                    <forename type="first">C</forename>
+                                    <forename type="middle">N</forename>
+                                    <surname>Yang</surname>
+                                </persName>
+                            </author>
+                        </analytic>
+                        <monogr>
+                            <title level="j">Phys. Rev</title>
+                            <imprint>
+                                <biblScope unit="volume">77</biblScope>
+                                <biblScope unit="page">242</biblScope>
+                                <date type="published" when="1950" />
+                            </imprint>
+                        </monogr>
+                    </biblStruct>
+                    <biblStruct xml:id="b11">
+                        <analytic>
+                            <title/>
+                            <author>
+                                <persName>
+                                    <forename type="first">S</forename>
+                                    <forename type="middle">Y</forename>
+                                    <surname>Choi</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">D</forename>
+                                    <forename type="middle">J</forename>
+                                    <surname>Miller</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">2</forename>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">M</forename>
+                                    <forename type="middle">M</forename>
+                                    <surname>Muhlleitner</surname>
+                                </persName>
+                            </author>
+                            <author>
+                                <persName>
+                                    <forename type="first">P</forename>
+                                    <forename type="middle">M</forename>
+                                    <surname>Zerwas</surname>
+                                </persName>
+                            </author>
+                        </analytic>
+                        <monogr>
+                            <title level="j">Phys. Lett. B Phys. Rev. Lett</title>
+                            <editor>Keung, I. Low and J. Shu</editor>
+                            <imprint>
+                                <biblScope unit="volume">553</biblScope>
+                                <biblScope unit="issue">101</biblScope>
+                                <biblScope unit="page">091802</biblScope>
+                                <date type="published" when="2003" />
+                            </imprint>
+                        </monogr>
+                        <note>hep. -ph]]</note>
+                    </biblStruct>
+                </listBibl>
+            </div>
+        </back>
+    </text>
+</TEI>
