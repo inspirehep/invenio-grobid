@@ -2,7 +2,7 @@ include *.py
 include *.rst
 include *.txt
 include .coveragerc
-include .travis.invenio.cfg
+include .travis.invenio.cfg .dockerignore .editorconfig
 include LICENSE
 include babel.ini
 include pytest.ini
@@ -19,3 +19,4 @@ recursive-include misc *.py
 recursive-include misc *.rst
 recursive-include tests *.pdf
 recursive-include tests *.py
+recursive-include tests *.xml

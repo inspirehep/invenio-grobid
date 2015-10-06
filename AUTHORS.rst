@@ -28,3 +28,5 @@ Invenio module to interact with Grobid API for metadata extraction.
 
 - Jacopo Notarstefano <jacopo.notarstefano@cern.ch>
 - Jan Aage Lavik <jan.age.lavik@cern.ch>
+
+Special thanks to Joseph Boyd (@jcboyd) and Gilles Louppe (@glouppe) for Grobid support.

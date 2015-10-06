@@ -2,12 +2,12 @@
  Invenio Grobid v0.1.0
 =======================
 
-Invenio Grobid v0.1.0 was released on TBD, 2015.
+Invenio Grobid v0.1.0 was released on October 9, 2015.
 
 About
 -----
 
-Invenio module to interact with Grobid API for metadata extraction.
+Invenio module to interact with Grobid API for metadata extraction from PDF.
 
 *This is an experimental developer preview release.*
 
@@ -28,9 +28,8 @@ Documentation
 
 Happy hacking and thanks for flying Invenio Grobid.
 
-| Invenio Development Team
-|   Email: info@invenio-software.org
-|   IRC: #invenio on irc.freenode.net
-|   Twitter: http://twitter.com/inveniosoftware
+| INSPIRE Development Team
+|   Email: feedback@inspirehep.net
+|   Twitter: http://twitter.com/inspirehep
 |   GitHub: https://github.com/inspirehep/invenio-grobid
-|   URL: http://invenio-software.org
+|   URL: http://inspirehep.net

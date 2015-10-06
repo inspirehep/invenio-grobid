@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Invenio; if not, write to the Free Software Foundation,
-# Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+# Inc., 59 Temple Place, Suite 330, Boston, MA 021111307, USA.
 #
 # In applying this license, CERN does not waive the privileges and immunities
 # granted to it by virtue of its status as an Intergovernmental Organization
@@ -29,6 +29,7 @@ sudo: false
 services:
   - mysql
   - redis
+  - elasticsearch
 
 language: python
 
@@ -42,11 +43,11 @@ env:
   - REQUIREMENTS=devel REXTRAS=docs,tests
 
 python:
-  - "2.7"
+  - '2.7'
 
 before_install:
   - "travis_retry pip install --upgrade pip"
-  - "travis_retry pip install coveralls"
+  - "travis_retry pip install check-manifest mock twine wheel coveralls"
   - "python requirements.py --extras=$REXTRAS --level=min > .travis-lowest-requirements.txt"
   - "python requirements.py --extras=$REXTRAS --level=pypi > .travis-release-requirements.txt"
   - "python requirements.py --extras=$REXTRAS --level=dev > .travis-devel-requirements.txt"
@@ -59,10 +60,11 @@ install:
   - "travis_retry pip install -e .[$REXTRAS]"
 
 before_script:
-  - "inveniomanage database init --yes-i-know || echo ':('"
-  - "inveniomanage database create --quiet || echo ':('"
+  - "inveniomanage database init --yes-i-know"
+  - "inveniomanage database create --quiet"
 
 script:
+  - "check-manifest --ignore .travis-\\*-requirements.txt"
   - "sphinx-build -qnN docs docs/_build/html"
   - "python setup.py test"
 
@@ -73,7 +75,7 @@ deploy:
   provider: pypi
   user: inspirehep
   password:
-    secure: DIL6/onKZ2zogDqF3Fl77pcti7v/3tNbRmwTI9rwtnwiGVnc4Xzp3LLwzIe5bsubbJ47FOjEGJDEJli2qK6Jk+to5+xVKHYa75uGKVAwaCuuFRhxPVSCfSqb6TK/Vi1THBDLq5muUoGgVJu3rujAUq3YZuHD9U68JNgHlcACIeE=
+    secure: n8dlsKbm+ogTpbVIgaZREiv9Ig+QRA8nn4M27LWlGjTvRL6qEtCB9U7qmzEAz6OAqLlpCw0xuosIx6kty/IiPK4RGDdksANBzTSdE8IRchAt3h0u+O9JOrrabRJWEtAjac8W5KaBNKHwH0vs1UB7GSXaQkZ6YIH9/F27OeALJPy/iFPq/UO5U6hpH2Y6uO075lWqF9tP6rJMZnrDhV7bRoJ1T9NPARPkhyBZ4brETkOj83DwmCh52rV9FSoixaXYHC/8vhAETbWucu/oT7OXYlCrRjItcbSk8MTxtb4vwXXuqhAe2xn1KsXbv1zt11Agu9emuoD/vxXPwvkDrfJUVvkWxFK7SN7G33H4w9L226PuKSjOpbzjwjCf6wmeYiOv5h27lM1/Swaryn+9mCk5YE7bcMzJbMllLQX15+jzw+j1Hgj/L6HXLPtEsY960wfCTT8cplBEe1TV1okbRudDkVI/BxCtzIKvNJeR5cT7/HXNNU60eD7br9cFiaurmXT61Y75zrrDxQ8pZRueZBTLt81S4JwmDzBmx9a9DP/4GcRW546spD3i1B/1ynRuvW2hsWWcRW9L1Y3QFrP9DNK1SErjU7jIOGKRqItemfk/AAWsdP5GDLyQ9FkiInKElC3fRqJ6LcKv4EV6yQDoULqZuYQMLn891a7m/qGHgIQFTQc=
   on:
     tags: true
     repo: inspirehep/invenio-grobid
