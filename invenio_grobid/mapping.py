@@ -25,6 +25,7 @@
 """Mapping from Grobid's TEI to the internal dict representation."""
 
 from lxml import etree
+from six import text_type
 
 
 NS = {'tei': 'http://www.tei-c.org/ns/1.0'}
@@ -32,6 +33,7 @@ NS = {'tei': 'http://www.tei-c.org/ns/1.0'}
 
 def tei_to_dict(tei):
     parser = etree.XMLParser(encoding='UTF-8', recover=True)
+    tei = tei if not isinstance(tei, text_type) else tei.encode('utf-8')
     root = etree.fromstring(tei, parser)
 
     result = {}
