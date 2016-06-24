@@ -27,5 +27,5 @@
 GROBID_HOST = 'http://localhost:8080'
 """URL to host:port running Grobid service."""
 
-GROBID_RESULT_HANDLER = "invenio_grobid.extras:submit_handler"
+GROBID_RESULT_HANDLER = None
 """Import path or function dealing with the Grobid submission."""

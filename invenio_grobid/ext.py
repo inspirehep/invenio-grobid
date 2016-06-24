@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of Invenio.
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2016 CERN.
 #
 # Invenio is free software; you can redistribute it
 # and/or modify it under the terms of the GNU General Public License as
@@ -22,11 +22,35 @@
 # waive the privileges and immunities granted to it by virtue of its status
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-"""Extras for Invenio Grobid."""
+"""Module for interacting with the Grobid service."""
 
-from .tasks import upload
+from __future__ import absolute_import, print_function
+
+from . import config
+from .views import blueprint
 
 
-def submit_handler(results):
-    """Submit results asynchronously using `invenio_grobid.tasks.upload`."""
-    return upload.delay(results)
+class InvenioGrobid(object):
+    """Invenio-Grobid extension."""
+
+    def __init__(self, app=None):
+        """Extension initialization."""
+        if app:
+            self.init_app(app)
+
+    def init_app(self, app):
+        """Flask application initialization."""
+        self.init_config(app)
+        app.register_blueprint(blueprint)
+        app.extensions['invenio-grobid'] = self
+
+    def init_config(self, app):
+        """Initialize configuration."""
+        app.config.setdefault(
+            'GROBID_BASE_TEMPLATE',
+            app.config.get('BASE_TEMPLATE', 'grobid/base.html')
+        )
+
+        for k in dir(config):
+            if k.startswith('GROBID_'):
+                app.config.setdefault(k, getattr(config, k))

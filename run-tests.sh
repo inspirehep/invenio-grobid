@@ -1,7 +1,8 @@
+#!/usr/bin/env sh
 # -*- coding: utf-8 -*-
 #
 # This file is part of Invenio.
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # Invenio is free software; you can redistribute it
 # and/or modify it under the terms of the GNU General Public License as
@@ -22,14 +23,8 @@
 # waive the privileges and immunities granted to it by virtue of its status
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-"""Custom exception types."""
 
-import invenio_records.api
-
-from invenio.celery import celery
-
-
-@celery.task
-def upload(results):
-    """Upload record using `invenio_records.api.create_record`."""
-    return invenio_records.api.create_record(results)
+check-manifest --ignore ".travis-*" && \
+sphinx-build -qnNW docs docs/_build/html && \
+python setup.py test && \
+sphinx-build -qnNW -b doctest docs docs/_build/doctest

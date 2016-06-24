@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of Invenio.
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # Invenio is free software; you can redistribute it
 # and/or modify it under the terms of the GNU General Public License as
@@ -24,6 +24,9 @@
 
 """Invenio module to interact with Grobid API for metadata extraction."""
 
-from version import __version__
+from __future__ import absolute_import, print_function
 
-__all__ = ['__version__']
+from .ext import InvenioGrobid
+from .version import __version__
+
+__all__ = ('__version__', 'InvenioGrobid')

@@ -17,15 +17,22 @@
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 #}
 
-{% extends "grobid/base.html" %}
+{% extends config.GROBID_BASE_TEMPLATE %}
 
-{% block header %}
+
+{%- block css %}
   {{ super() }}
-  {% bundles "grobid.css", "grobid.js", "jquery.js" %}
-{% endblock %}
+  {%- assets "invenio_grobid_css" %}
+    <link href="{{ ASSET_URL }}" rel="stylesheet">
+  {%- endassets %}
+{%- endblock css %}
 
 {% block javascript %}
   {{ super() }}
+
+  {% assets "invenio_grobid_js" %}
+  <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
 
   <script type="text/javascript">
     require(["js/grobid/grobid"],

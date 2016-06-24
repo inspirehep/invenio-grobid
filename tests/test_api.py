@@ -21,40 +21,42 @@ import os
 import pkg_resources
 
 import httpretty
+import mock
 import pytest
 
 from invenio_grobid.api import process_pdf_stream
 from invenio_grobid.errors import GrobidRequestError
 
-from flask import current_app
-from invenio.testsuite import InvenioTestCase
+
+@pytest.fixture
+def sample_pdf():
+    """Provide pdf fixture."""
+    return pkg_resources.resource_string(
+        'tests', os.path.join('fixtures', 'article.pdf'))
 
 
-class TestAPI(InvenioTestCase):
+@mock.patch('invenio_grobid.api.current_app')
+def test_ok_response(current_app, httppretty_mock, sample_pdf):
+    """A valid pdf results in a valid response from GROBID."""
+    current_app.config = {
+        'GROBID_HOST': 'http://localhost:8080'
+    }
+    url = os.path.join(current_app.config.get("GROBID_HOST"),
+                       "processFulltextDocument")
+    httpretty.register_uri(httpretty.POST, url, body='OK')
 
-    """Test invenio_grobid's API."""
+    assert process_pdf_stream(sample_pdf) == 'OK'
 
-    def setup_class(self):
-        """Load a valid fixture."""
-        self.pdf = pkg_resources.resource_string(
-            'tests', os.path.join('fixtures', 'article.pdf')
-        )
 
-    @httpretty.activate
-    def test_ok_response(self):
-        """A valid pdf results in a valid response from GROBID."""
-        url = os.path.join(current_app.config.get('GROBID_HOST'),
-                           'processFulltextDocument')
-        httpretty.register_uri(httpretty.POST, url, body='OK')
+@mock.patch('invenio_grobid.api.current_app')
+def test_ko_response(current_app, httppretty_mock, sample_pdf):
+    """A 500 response from GROBID yields a GrobidRequestError."""
+    current_app.config = {
+        'GROBID_HOST': 'http://localhost:8080'
+    }
+    url = os.path.join(current_app.config.get("GROBID_HOST"),
+                       "processFulltextDocument")
+    httpretty.register_uri(httpretty.POST, url, status=500)
 
-        self.assertEqual(process_pdf_stream(self.pdf), 'OK')
-
-    @httpretty.activate
-    def test_ko_response(self):
-        """A 500 response from GROBID yields a GrobidRequestError."""
-        url = os.path.join(current_app.config.get('GROBID_HOST'),
-                           'processFulltextDocument')
-        httpretty.register_uri(httpretty.POST, url, status=500)
-
-        with pytest.raises(GrobidRequestError):
-            process_pdf_stream(self.pdf)
+    with pytest.raises(GrobidRequestError):
+        process_pdf_stream(sample_pdf)

@@ -54,6 +54,8 @@ def process_pdf_stream(pdf_file):
 def submit_record(results):
     """Submits the record in the way determined by `GROBID_RESULT_HANDLER`."""
     handler = current_app.config.get("GROBID_RESULT_HANDLER")
+    if not handler:
+        return
     if isinstance(handler, six.string_types):
         handler = import_string(handler)
     return handler(results)

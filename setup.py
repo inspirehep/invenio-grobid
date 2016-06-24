@@ -25,64 +25,51 @@
 """Invenio module to interact with Grobid API for metadata extraction."""
 
 import os
-import sys
 
-from setuptools import setup
-from setuptools.command.test import test as TestCommand
+from setuptools import find_packages, setup
 
 readme = open('README.rst').read()
 history = open('CHANGES.rst').read()
 
-requirements = [
+tests_require = [
+    'check-manifest>=0.25',
+    'coverage>=4.0',
+    'isort>=4.2.2',
+    'psycopg2>=2.6.1',
+    'pydocstyle>=1.0.0',
+    'pytest-cache>=1.0',
+    'pytest-cov>=1.8.0',
+    'pytest-pep8>=1.0.6',
+    'pytest>=2.8.0',
+    'reportlab>=3.3.0',
+    'httpretty>=0.8.14'
+]
+
+extras_require = {
+    'docs': [
+        'Sphinx>=1.4.2',
+    ],
+    'tests': tests_require,
+}
+
+extras_require['all'] = []
+for reqs in extras_require.values():
+    extras_require['all'].extend(reqs)
+
+setup_requires = [
+    'Babel>=1.3',
+    'pytest-runner>=2.6.2',
+]
+
+install_requires = [
     'Flask>=0.10.1',
+    'Flask-Login>=0.3.2',
     'six>=1.7.2',
+    'lxml>=3.5.0'
     # FIXME: Add Invenio dependancy
 ]
 
-test_requirements = [
-    'Flask_Testing>=0.4.2',
-    'httpretty>=0.8.10',
-    'pytest>=2.7.0,<2.8.0',
-    'pytest-cov>=1.8.0',
-    'pytest-pep8>=1.0.6',
-    'coverage>=3.7.1',
-    'invenio-base>=0.2.1',
-    'invenio-ext>=0.1.0',
-]
-
-
-class PyTest(TestCommand):
-    """PyTest Test."""
-
-    user_options = [('pytest-args=', 'a', "Arguments to pass to py.test")]
-
-    def initialize_options(self):
-        """Init pytest."""
-        TestCommand.initialize_options(self)
-        self.pytest_args = []
-        try:
-            from ConfigParser import ConfigParser
-        except ImportError:
-            from configparser import ConfigParser
-        config = ConfigParser()
-        config.read('pytest.ini')
-        self.pytest_args = config.get('pytest', 'addopts').split(' ')
-
-    def finalize_options(self):
-        """Finalize pytest."""
-        TestCommand.finalize_options(self)
-        self.test_args = []
-        self.test_suite = True
-
-    def run_tests(self):
-        """Run tests."""
-        # import here, cause outside the eggs aren't loaded
-        import pytest
-        import _pytest.config
-        pm = _pytest.config.get_plugin_manager()
-        pm.consider_setuptools_entrypoints()
-        errno = pytest.main(self.pytest_args)
-        sys.exit(errno)
+packages = find_packages()
 
 # Get the version string. Cannot be done with import!
 g = {}
@@ -100,20 +87,26 @@ setup(
     author='CERN',
     author_email='feedback@inspirehep.net',
     url='https://github.com/inspirehep/invenio-grobid',
-    packages=[
-        'invenio_grobid',
-    ],
+    packages=packages,
     zip_safe=False,
     include_package_data=True,
     platforms='any',
-    install_requires=requirements,
-    extras_require={
-        'docs': [
-            'Sphinx>=1.3',
-            'sphinx_rtd_theme>=0.1.7'
+    entry_points={
+        'invenio_base.apps': [
+            'invenio_grobid = invenio_grobid:InvenioGrobid',
         ],
-        'tests': test_requirements
+        'invenio_base.api_apps': [
+            'invenio_grobid_rest = invenio_grobid:InvenioGrobid',
+        ],
+        'invenio_assets.bundles': [
+            'invenio_grobid_css = invenio_grobid.bundles:css',
+            'invenio_grobid_js = invenio_grobid.bundles:js'
+        ],
     },
+    extras_require=extras_require,
+    install_requires=install_requires,
+    setup_requires=setup_requires,
+    tests_require=tests_require,
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
@@ -129,7 +122,5 @@ setup(
         # 'Programming Language :: Python :: 3.3',
         # 'Programming Language :: Python :: 3.4',
         'Development Status :: 1 - Planning',
-    ],
-    tests_require=test_requirements,
-    cmdclass={'test': PyTest},
+    ]
 )

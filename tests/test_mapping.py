@@ -19,19 +19,22 @@
 
 import os
 import pkg_resources
+import pytest
 
 from invenio_grobid.mapping import tei_to_dict
 
-from invenio.testsuite import InvenioTestCase
+
+@pytest.fixture
+def sample_tei():
+    """Provide pdf fixture."""
+    return pkg_resources.resource_string(
+            'tests', os.path.join('fixtures', 'article.xml')
+        )
 
 
-class TestMapping(InvenioTestCase):
-
-    """Test invenio_grobid's TEI to dict mapping."""
-
-    def setup_class(self):
-        """Load a TEI and the expected dict."""
-        self.dict = {
+def test_tei_to_dict(sample_tei):
+    """Convert TEI to the internal dict representation."""
+    sample_dict = {
             'title': 'The Need to Fairly Confront Spin-1 for the New Higgs-like Particle',
             'authors': [
                 {
@@ -330,10 +333,4 @@ class TestMapping(InvenioTestCase):
                 },
             ]
         }
-        self.tei = pkg_resources.resource_string(
-            'tests', os.path.join('fixtures', 'article.xml')
-        )
-
-    def test_tei_to_dict(self):
-        """Convert TEI to the internal dict representation."""
-        self.assertEqual(self.dict, tei_to_dict(self.tei))
+    assert sample_dict == tei_to_dict(sample_tei)
